@@ -21,3 +21,16 @@ VALUES('Make an App',1,'Using Dart','2019-05-13');
 
 INSERT INTO projects (name, priority, description,deliverydate)
 VALUES('Make a Desktop App',2,'Using Dart','2019-05-14');
+
+-- INSERT TASK DATA
+INSERT INTO tasks (name, done, projectId)
+VALUES ('download Vuejs', false, 1);
+
+INSERT INTO tasks (name, done, projectId)
+VALUES ('Create UI web', false, 1);
+
+INSERT INTO tasks (name, done, projectId)
+VALUES ('Download Flutter', false, 2);
+
+INSERT INTO tasks (name, done, projectId)
+VALUES ('design UI', false, 2);
