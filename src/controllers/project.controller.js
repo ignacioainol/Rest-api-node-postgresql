@@ -53,3 +53,17 @@ export async function getOneProject(req,res){
     });
     res.json(project);
 }
+
+export async function deleteProject(req,res){
+    const { id } = req.params;
+    const deleteRowCount = await Project.destroy({
+        where:{
+            id
+        }
+    });
+
+    res.json({
+        "message": "Project deleted successfully",
+        "count": deleteRowCount
+    });
+}
