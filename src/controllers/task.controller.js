@@ -66,9 +66,16 @@ export async function deleteTask(req,res){
 
 }
 
-export function getOneTask(req,res){
+export async function getOneTask(req,res){
+    const { id } = req.params;
+    const task = await Task.findOne({
+        where: { id },
+        attributes: ['id', 'projectid', 'name', 'done']
+    });
 
+    res.json(task);
 }
+
 
 export function getTaskByProject(req,res){
 
