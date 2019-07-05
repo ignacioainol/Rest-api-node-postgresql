@@ -77,6 +77,12 @@ export async function getOneTask(req,res){
 }
 
 
-export function getTaskByProject(req,res){
+export async function getTaskByProject(req,res){
+    const { projectid } = req.params;
+    const tasks = await Task.findAll({
+        attributes: ['id','projectid','done','name'],
+        where:{ projectid }
+    });
 
+    res.json(tasks);
 }
